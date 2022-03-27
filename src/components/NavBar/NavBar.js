@@ -1,22 +1,24 @@
 import './NavBar.css'
+import CartWidget from '../CartWidget/CartWidget'
 
 const NavBar = () => {
     return(
         <nav className="NavBar">
-            <img className="Logo" src='./images/logo-blendnroll.png' alt="logo-blendnroll"/>
-            <h3 className="TextLogo">Tabaqueria Online</h3>
-            <ul className="NavCategories">
-                    <li className="NavItem">
-                        <a className="NavLink" href="#">Tabacos</a>
+            <img className="logo" src='./images/logo-blendnroll.png' alt="logo-blendnroll"/>
+            <h3 className="textLogo">Tabaqueria Online</h3>
+            <ul className="navCategories">
+                    <li className="navItem">
+                        <a className="navLink" href="#">Tabacos</a>
                     </li>
-                    <li className="NavItem">
-                        <a className="NavLink" href="#">Insumos</a>
+                    <li className="navItem">
+                        <a className="navLink" href="#">Insumos</a>
                     </li>
-                    <li className="NavItem">
-                        <a className="NavLink" href="#">Accesorios</a>
+                    <li className="navItem">
+                        <a className="navLink" href="#">Accesorios</a>
                     </li>
                 </ul>   
-            <button className="LogIn"> <img className="LogIcon" src='./images/icono-login.jpg' alt="icono-login"/>LogIn</button>
+            <button className="logIn"> <img className="logIcon" src='./images/icono-login.jpg' alt="icono-login"/>LogIn</button>
+            <CartWidget/>      
         </nav>
     )
 
