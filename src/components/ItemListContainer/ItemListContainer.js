@@ -1,25 +1,24 @@
-import React, {useState} from "react"
-import ItemCount from "../ItemCount/ItemCount"
+import React, {useState, useEffect} from "react"
+import { getProducts } from "../../asyncmock"
+import ItemList from "../ItemList/ItemList"
+
 const ItemListContainer = (props) => {
-    const [count, setCount] = useState(0);
-    const onAdd = (condition) => {
-        if(condition === '-'){
-            setCount(count-1)
-        }
-        if(condition === '+'){
-            setCount(count+1)
-        }
-    };
-    const stock = 10;
-    const initial = 0;
-    const comprarProd = () => {
-        console.log(`se agregaron ${count} productos`)
-    }
+    const [products, setProducts] = useState([])
+
+        useEffect(() => {
+            getProducts().then(prods => {
+                setProducts(prods)
+            }).catch(error => {
+                console.log(error)
+            })
+        },[])
+
     return (
         <div>
-            <ItemCount onAdd={onAdd} stock={stock} initial={initial} count={count} comprarProd={comprarProd}/>
+            <h1>{props.greeting}</h1>
+            <ItemList products={products}/>
         </div>
-    );
+    )
 }
 
-export default ItemListContainer;
+export default ItemListContainer
