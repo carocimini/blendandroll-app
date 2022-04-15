@@ -13,12 +13,10 @@ const Counter = (props) => {
     };
     const stock = 10;
     const initial = 0;
-    const comprarProd = () => {
-        console.log(`se agregaron ${count} productos`)
-    }
+    
     return (
         <div>
-            <ItemCount onAdd={onAdd} stock={stock} initial={initial} count={count} comprarProd={comprarProd}/>
+            <ItemCount onAdd={onAdd} stock={stock} initial={initial} count={count} />
         </div>
     );
 }

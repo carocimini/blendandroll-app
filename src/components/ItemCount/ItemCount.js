@@ -10,7 +10,7 @@ const ItemCount = ({onAdd, stock, initial, count, comprarProd}) => {
             <h4 className="countResult">{count}</h4>
             <button className="botonCount" onClick={() => {if(count<stock){onAdd ('+')}}}>+</button>
             </div>
-            <button className="botonComprar" onClick={comprarProd} >Agregar al Carrito</button>
+            <button className="botonComprar" onClick={agregarProd} >Agregar al Carrito</button>
         </div>
     )
     
