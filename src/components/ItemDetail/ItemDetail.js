@@ -1,12 +1,9 @@
 import './ItemDetails.css'
 import Counter from '../Counter/Counter'
 
+
 const ItemDetail = ({ id, name, img, price, category, stock, description}) => {
-    const [quantity,setQuantity] = useState(0)
-    const agregarProd = (count) => {
-        console.log(`se agregaron ${count} productos`)
-        setQuantity(count)
-    }
+    
     return(
         <article className='sectionDetail'>
             <header className='headerDetail'>
@@ -29,8 +26,7 @@ const ItemDetail = ({ id, name, img, price, category, stock, description}) => {
                 </p>
             </section>
             <footer className='ditailFooter'>
-                
-                {quantity > 0 ? <Link to='/cart'>Ir al carrito</Link> : <Counter agregarProd={agregarProd}/>}
+                <Counter/>
             </footer>
         </article>
                 
