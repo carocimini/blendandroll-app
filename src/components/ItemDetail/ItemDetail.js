@@ -26,7 +26,7 @@ const ItemDetail = ({ id, name, img, price, category, stock, description}) => {
                 </p>
             </section>
             <footer className='ditailFooter'>
-                <Counter/>
+                <Counter id={id} name={name} price={price}/>
             </footer>
         </article>
                 
