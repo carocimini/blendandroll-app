@@ -5,7 +5,7 @@ import CartContext from "../../context/CartContext"
 
 const Counter = (id, name, price) => {
     const [count, setCount] = useState(0);
-
+    const [quantity, setQuantuty] =useState(0)
     const {addItem, isInCart} = useContext(CartContext)
 
     const onAdd = (condition) => {
@@ -18,7 +18,7 @@ const Counter = (id, name, price) => {
     };
 
     const agregarProd = (count) => {
-
+        setQuantuty(count)
         const objProd = {id, name, price}
 
         addItem({...objProd, quantity : count})
