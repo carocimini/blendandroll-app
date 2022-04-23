@@ -18,7 +18,8 @@ export const CartContextProvider = ({ children }) => {
         return count
     }
 
-    const isInCart = (id) =>{
+    const isInCart = (id) => {
+        console.log('ya esta en el carrito')
         return cart.some(prod => prod.id === id)
     }
 
@@ -27,12 +28,20 @@ export const CartContextProvider = ({ children }) => {
     }
 
     const removeItem = (id) => {
-        const products = cart.filter(prod => prod.id !== id)
-        setCart (products)
+        const newCart = cart.filter((prod) => prod.id !== id)
+        setCart ([newCart])
+        console.log('se elimino el producto')
     }
 
+    const updateCart = (productToAdd) => {
+        const prodToUpdate = cart.find(prod => prod.id === productToAdd.id)
+        productToAdd.quantity = productToAdd.quantity + prodToUpdate.quantity
+        const newCart = cart.filter((prod) => prod.id !== productToAdd.id)
+        setCart([...newCart, productToAdd])
+    } 
+
     return(
-        <CartContext.Provider value={{cart, addItem, getQuantity, isInCart, clearCart, removeItem}}>
+        <CartContext.Provider value={{cart, addItem, getQuantity, isInCart, clearCart, removeItem, updateCart}}>
             {children}
         </CartContext.Provider>
     )

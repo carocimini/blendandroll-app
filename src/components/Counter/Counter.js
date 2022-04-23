@@ -1,12 +1,11 @@
 import React, {useState, useContext} from "react"
 import ItemCount from "../ItemCount/ItemCount"
-import { Link } from 'react-router-dom'
 import CartContext from "../../context/CartContext"
 
 const Counter = (id, name, price) => {
     const [count, setCount] = useState(0);
-    const [quantity, setQuantuty] =useState(0)
-    const {addItem, isInCart} = useContext(CartContext)
+    const [quantity, setQuantity] =useState(0)
+    const {addItem, isInCart, updateCart} = useContext(CartContext)
 
     const onAdd = (condition) => {
         if(condition === '-'){
@@ -18,10 +17,10 @@ const Counter = (id, name, price) => {
     };
 
     const agregarProd = (count) => {
-        setQuantuty(count)
+        setQuantity(count)
         const objProd = {id, name, price}
-
-        addItem({...objProd, quantity : count})
+        isInCart(objProd.id) ? updateCart({...objProd, quantity : (count)}) : addItem({...objProd, quantity : (count)})
+        
     }
 
     const initial = 0;
@@ -29,7 +28,7 @@ const Counter = (id, name, price) => {
 
     return (
         <div>
-            {isInCart(id) ? <Link to='/cart'>Ir al carrito</Link> : <ItemCount onAdd={onAdd} stock={stock} initial={initial} count={count} agregarProd={agregarProd}/>}
+            <ItemCount onAdd={onAdd} stock={stock} initial={initial} count={count} agregarProd={agregarProd}/>
         </div>
     );
 }
