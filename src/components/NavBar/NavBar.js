@@ -1,3 +1,4 @@
+import React from 'react'
 import './NavBar.css'
 import CartWidget from '../CartWidget/CartWidget'
 import { Link, NavLink } from 'react-router-dom'
@@ -23,7 +24,9 @@ const NavBar = () => {
                 {categories.map(cat => <NavLink key={cat.id} to={`/category/${cat.id}`} className={({ isActive }) => isActive ? 'NavLinkActive' : 'NavLinkOption'}>{cat.description}</NavLink>)}
             </div>           
             <button className="logIn"> <img className="logIcon" src='./images/icono-login.jpg' alt="icono-login"/>LogIn</button>
-            <CartWidget/>      
+            
+            <CartWidget/>
+            
         </nav>
     )
 

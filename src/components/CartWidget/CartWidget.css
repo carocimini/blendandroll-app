@@ -20,3 +20,9 @@
     width: 25%;
     padding: 0%; 
 }
+.linkCart{
+    color: white;
+    font-size: 100%;
+    font-weight: 700;
+    text-decoration: none;
+}
