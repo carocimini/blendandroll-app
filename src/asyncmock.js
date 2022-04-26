@@ -5,7 +5,7 @@ const products = [
         price: 450,
         category: 'Tabacos',
         img: 'https://www.distribuidorapop.com.ar/wp-content/uploads/2015/09/tabaco-flandria-vainilla-precios.jpg.webp',
-        Stock: 20,
+        stock: 20,
         description: 'Tabaco Flandria de Vainilla para armar cigarrillos, de origen belga y vienen en paquetes de 30 Grs. Saborizados sutilmente con una agradable gusto a vainilla, es uno de los tabacos preferidos de los fumadores casuales.',
     },
     {
@@ -14,7 +14,7 @@ const products = [
         price: 450,
         category: 'Tabacos',
         img: 'https://www.distribuidorapop.com.ar/wp-content/uploads/2016/10/tabaco-flandria-eco-mayorista.jpg',
-        Stock: 10,
+        stock: 10,
         description: 'Tabaco Flandria Eco finamente cortado y libre de aditivos tales como aromatizadores y conservantes. Producido a partir de hojas de tabaco cuidadosamente seleccionadas, esta variedad de tabaco Flandria logra una perfecta combinacion entre sabor y aroma.',
     },
     {
@@ -23,7 +23,7 @@ const products = [
         price: 450,
         category: 'Tabacos',
         img: 'https://www.distribuidorapop.com.ar/wp-content/uploads/2016/02/tabaco-flandria-sauvage-precio.jpg',
-        Stock: 5,
+        stock: 5,
         description: 'El tabaco Flandria Sauvage presenta un precio tan equilibrado como sus sabor. Es desde ya un tabaco que se encuadra dentro de la categoría Natural o sin aditivos. ',
     },
     {
@@ -32,7 +32,7 @@ const products = [
         price: 180,
         category: 'Insumos',
         img: 'https://www.distribuidorapop.com.ar/wp-content/uploads/2016/02/papel-ocb-ultimate.jpg',
-        Stock: 20,
+        stock: 20,
         description: 'Es un papel ultra fino lo que significa que la combustión es lenta.',
     },
     {
@@ -41,7 +41,7 @@ const products = [
         price: 180,
         category: 'Insumos',
         img: 'https://www.distribuidorapop.com.ar/wp-content/uploads/2017/04/papel-ocb-no-blanqueado-70mm.jpg',
-        Stock: 20,
+        stock: 20,
         description: 'Es un papel fino que no ha sido sometido a ningún proceso de blanqueo y por eso su combustión es muy lenta',
     },
     {
@@ -50,7 +50,7 @@ const products = [
         price: 1300,
         category: 'Accesorios',
         img: 'https://www.distribuidorapop.com.ar/wp-content/uploads/2016/10/maquina-ocb-automatica-metal.jpg',
-        Stock: 5,
+        stock: 5,
         description: 'Maquina OCB automática para armar cigarrillos de una manera sencilla y rápida.',
     },
 ]
