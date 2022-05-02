@@ -3,6 +3,7 @@ import { getDocs, writeBatch, query, where, collection, documentId, addDoc } fro
 import { firestoreDb } from "../../services/firebase"
 import { useContext } from "react"
 import CartContext from "../../context/CartContext"
+import { Link } from 'react-router-dom'
 
 const CheckoutForm = () => {
     const {cart, getTotal} = useContext (CartContext)
@@ -62,6 +63,9 @@ const CheckoutForm = () => {
         }).finally(() =>{
             setLoading(false)
         })
+        return(
+            <Link to='/' className='linkVolver'>Volver a Comprar</Link>
+        )
     }
     
     if(loading) {
@@ -82,24 +86,28 @@ const CheckoutForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="nombre">Nombre Completo:</label>
-            <input id="nombre" name="nombre" type='text'
-                onChange={(e) => setNombre(e.target.value)}
-                onKeyDown={handleKeyDown}
-            />
-            <label htmlFor="telefono">Telefono:</label>
-            <input id="telefono" name="telefono" type='number'
-                onChange={(e) => setTelefono(e.target.value)}
-                onKeyDown={handleKeyDown}
-            />
-            <label htmlFor="email">Email:</label>
-            <input id="email" name="email" type='email'
-                onChange={(e) => setEmail(e.target.value)}
-                onKeyDown={handleKeyDown}
-            />
-            <button className="createOrder" type="submit" onClick={() => {createOrder(nombre, telefono, email)}}>Generar Orden de Compra</button>
-        </form>
+        <div className="contenedorForm">
+            <h2>Datos del Comprador</h2>
+            <form className="formCompra" onSubmit={handleSubmit}>
+                <label htmlFor="nombre">Nombre Completo:</label>
+                <input id="nombre" name="nombre" type='text'
+                    onChange={(e) => setNombre(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                />
+                <label htmlFor="telefono">Telefono:</label>
+                <input id="telefono" name="telefono" type='number'
+                    onChange={(e) => setTelefono(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                />
+                <label htmlFor="email">Email:</label>
+                <input id="email" name="email" type='email'
+                    onChange={(e) => setEmail(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                />
+                <button className="createOrder" type="submit" onClick={() => {createOrder(nombre, telefono, email)}}>Generar Orden de Compra</button>
+            </form>
+        </div>
+        
     )
 }
 
