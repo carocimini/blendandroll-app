@@ -10,9 +10,18 @@ const CartContainer = () => {
     return(
             <div>
                 <h1>Cart</h1>
-                <Link to='/' className='linkVolver'>Volver a comprar</Link>  
+                
                 <div>
-                    {getQuantity() > 0 ? <Cart/> : <h2>El carrito esta vacio</h2>}
+                    {getQuantity() > 0 ? 
+                    <div>
+                        <Link to='/' className='linkVolver'>Volver</Link>
+                        <Cart/>
+                    </div> : 
+                    <div>
+                        <h2>El carrito esta vacio</h2>
+                        <button className="btnIrCompra"><Link to= '/' className="linkCompra">Ir a Comprar</Link></button>
+                    </div>
+                    }
                 </div>
             </div>
     )

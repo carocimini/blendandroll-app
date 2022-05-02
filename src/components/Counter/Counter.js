@@ -3,7 +3,7 @@ import ItemCount from "../ItemCount/ItemCount"
 import CartContext from "../../context/CartContext"
 import { Link } from 'react-router-dom'
 
-const Counter = ({id, name, price}) => {
+const Counter = ({id, name, price, stock}) => {
     const [count, setCount] = useState(0);
     const [quantity, setQuantity] =useState(0)
     const {addItem, isInCart, updateCart} = useContext(CartContext)
@@ -25,7 +25,6 @@ const Counter = ({id, name, price}) => {
     }
 
     const initial = 0;
-    const stock = 10;
 
     return (
         <div>

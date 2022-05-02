@@ -40,9 +40,17 @@ export const CartContextProvider = ({ children }) => {
         setCart([...newCart, productToAdd])
     } 
 
+    const getTotal = () =>{
+        let countTotal = 0
+        cart.forEach(prod =>{ 
+            countTotal += prod.quantity * prod.price
+        })
+        return countTotal
+    }
+
 
     return(
-        <CartContext.Provider value={{cart, addItem, getQuantity, isInCart, clearCart, removeItem, updateCart}}>
+        <CartContext.Provider value={{cart, addItem, getQuantity, isInCart, clearCart, removeItem, updateCart, getTotal}}>
             {children}
         </CartContext.Provider>
     )
