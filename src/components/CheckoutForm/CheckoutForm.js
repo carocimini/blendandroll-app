@@ -70,11 +70,9 @@ const CheckoutForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        return(
-            <div>
-                <button className="createOrder" onClick={() => {createOrder(nombre, telefono, email)}}>Generar Orden de Compra</button>
-            </div>
-        )
+        console.log(nombre)
+        console.log(telefono)
+        console.log(email)
     }
 
     const handleKeyDown = (e) => {
@@ -100,7 +98,7 @@ const CheckoutForm = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 onKeyDown={handleKeyDown}
             />
-            <button type='submit'>submit</button>
+            <button className="createOrder" type="submit" onClick={() => {createOrder(nombre, telefono, email)}}>Generar Orden de Compra</button>
         </form>
     )
 }
