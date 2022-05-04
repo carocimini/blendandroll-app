@@ -3,6 +3,7 @@ import Cart from "../Cart/Cart";
 import { Link } from 'react-router-dom'
 import { useContext } from "react"
 import CartContext from "../../context/CartContext"
+import './CartContainer.css'
 
 const CartContainer = () => {
     const {getQuantity} = useContext (CartContext)
@@ -13,11 +14,11 @@ const CartContainer = () => {
                 
                 <div>
                     {getQuantity() > 0 ? 
-                    <div>
+                    <div className="contenedorCartView">
                         <Link to='/' className='linkVolver'>Volver</Link>
                         <Cart/>
                     </div> : 
-                    <div>
+                    <div className="contenedorCartView">
                         <h2>El carrito esta vacio</h2>
                         <button className="btnIrCompra"><Link to= '/' className="linkCompra">Ir a Comprar</Link></button>
                     </div>

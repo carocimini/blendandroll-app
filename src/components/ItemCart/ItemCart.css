@@ -1,0 +1,10 @@
+.containItemCart{
+    background-color: lightgray;
+    border-radius: 5%;
+    justify-content: center;
+    margin-top: 7%;
+    width: 60%;
+}
+.itemCart{
+    font-size: 100%;
+}

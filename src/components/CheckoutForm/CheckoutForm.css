@@ -1,0 +1,34 @@
+.contenedorForm{
+    justify-content: center;
+}
+.linkVolverCart{
+    margin-top: 5%;
+}
+.formTitle{
+    font-size: 100%;
+    font-weight: 700;
+}
+.formCompra{
+    border-radius: 5%;
+    margin: 20%;
+    margin-top: 10%;
+    padding: 5%;
+    background-color: #4BD1A0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+}
+.etiquetasForm{
+    font-weight: 500;
+}
+.createOrder{
+    text-decoration: none;
+    background-color: #E72E91;
+    padding: 2%;
+    border-radius: 5%;
+    color: #4BD1A0;
+    border-color: #E72E91;
+    font-weight: 500;
+}

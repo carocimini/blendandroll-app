@@ -4,6 +4,7 @@ import { firestoreDb } from "../../services/firebase"
 import { useContext } from "react"
 import CartContext from "../../context/CartContext"
 import { Link } from 'react-router-dom'
+import './CheckoutForm.css'
 
 const CheckoutForm = () => {
     const {cart, getTotal} = useContext (CartContext)
@@ -87,19 +88,20 @@ const CheckoutForm = () => {
 
     return (
         <div className="contenedorForm">
-            <h2>Datos del Comprador</h2>
+            <Link to={`/cartView/`} className="linkVolverCart" >Volver al Carrito</Link>
+            <h1 className="formTitle">Datos del Comprador</h1>
             <form className="formCompra" onSubmit={handleSubmit}>
-                <label htmlFor="nombre">Nombre Completo:</label>
+                <label className="etiquetasForm" htmlFor="nombre">Nombre Completo:</label>
                 <input id="nombre" name="nombre" type='text'
                     onChange={(e) => setNombre(e.target.value)}
                     onKeyDown={handleKeyDown}
                 />
-                <label htmlFor="telefono">Telefono:</label>
+                <label className="etiquetasForm" htmlFor="telefono">Teléfono:</label>
                 <input id="telefono" name="telefono" type='number'
                     onChange={(e) => setTelefono(e.target.value)}
                     onKeyDown={handleKeyDown}
                 />
-                <label htmlFor="email">Email:</label>
+                <label className="etiquetasForm" htmlFor="email">Email:</label>
                 <input id="email" name="email" type='email'
                     onChange={(e) => setEmail(e.target.value)}
                     onKeyDown={handleKeyDown}
