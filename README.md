@@ -77,7 +77,7 @@ npm start
 ```
 de esta manera se inicializa la app de forma local y se abre una pestaña en el navegador con la url [http://localhost:3000][PlMe] donde se podra visualizar el proyecto.
 
-Una vez inicializada la app vemos como interactuan los componentes. El archivo App.js tiene definidas las rutas a los pincipales componentes, a partir de estos se ejecuta el hilo de sub-componentes que intervienen en cada proceso: 
+Una vez inicializada la app vemos como interactuan los componentes. El archivo App.js tiene definidas las rutas a los pincipales componentes con React Routes, a partir de estas rutas se interconectan los componentes que intervienen en cada proceso: 
 
 **Componentes**:
 - **_NavBar_**: Este componente es el header de nuestra aplicación, en el mismo se visualida la marca, un menu con las categorias definidas en Firestore que actua como filtro al mapear el listado de productos con el componente _ItemListContainer_. Tambien muestra un boton de acceso al login (futuro desarrollo) y un boton/visualizador que mediante el componente _CartWidget_ nos permite mostrar la cantidad de productos agregados al carrito y que al ser clickeado nos da acceso al detalle del contenido del carrito con el componente _CartContainer_.
