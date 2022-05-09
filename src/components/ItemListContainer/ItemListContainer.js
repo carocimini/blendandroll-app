@@ -12,11 +12,7 @@ const ItemListContainer = (props) => {
     const {categoryId} = useParams()
 
         useEffect(() => {
-            //getProducts(categoryId).then(prods => {
-            //    setProducts(prods)
-            //}).catch(error => {
-            //    console.log(error)
-            //})
+
             const collectionRef = categoryId ?
             query(collection(firestoreDb, 'products'), where('category', '==', categoryId)):
             query(collection(firestoreDb, 'products'), orderBy("name", "desc"))
