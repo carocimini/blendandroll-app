@@ -65,7 +65,10 @@ const CheckoutForm = () => {
             setLoading(false)
         })
         return(
-            <Link to='/' className='linkVolver'>Volver a Comprar</Link>
+            <div>
+                <h2>Se genero la Orden Correctamente</h2>
+                <Link to='/' className='linkVolver'>Volver a Comprar</Link>
+            </div>
         )
     }
     

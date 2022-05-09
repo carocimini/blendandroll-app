@@ -5,7 +5,6 @@
     margin-top: 5%;
 }
 .formTitle{
-    font-size: 100%;
     font-weight: 700;
 }
 .formCompra{
@@ -24,11 +23,12 @@
     font-weight: 500;
 }
 .createOrder{
+    margin-top: 5%;
     text-decoration: none;
     background-color: #E72E91;
     padding: 2%;
     border-radius: 5%;
     color: #4BD1A0;
     border-color: #E72E91;
-    font-weight: 500;
+    font-weight: 700;
 }

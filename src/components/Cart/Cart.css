@@ -14,28 +14,25 @@
 }
 .deleteCart{
     text-decoration: none;
-    background-color: #E72E91;
-    padding: 2%;
+    padding: 1%;
     border-radius: 7%;
-    color:#4BD1A0;
-    border-color: #E72E91; 
     width: 15%;
     font-weight: 700;
-    height: 5%;
+    height: 3%;
+    margin-right: 5%;
 }
 .confirmBuy{
     text-decoration: none;
-    background-color: #4BD1A0;
-    padding: 2%;
+    background-color: #E72E91;
+    padding: 1%;
     border-radius: 7%;
-    color: #E72E91;
-    border-color: #4BD1A0;
+    border-color: #E72E91;
     width: 15%;
-    font-weight: 700;
-    height: 5%;
+    height: 3%;
+    margin-left: 5%;
 }
 .formBuyLink{
-    color: #E72E91;
+    color: #4BD1A0;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 700;
 }

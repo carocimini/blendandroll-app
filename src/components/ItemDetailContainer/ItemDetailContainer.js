@@ -17,16 +17,16 @@ const ItemDetailContainer = ()=> {
             console.log(response)
             const product = {id: response.id, ...response.data()}
             setProduct(product)
+            }).catch( error =>{
+                console.log(error)
+            }).finally(() =>{
+                setLoading(false)
             })
             return(()=>{
-                setProduct(product)
-            })    
+                setProduct()
+            })   
                 
-        },[productId]).catch( error =>{
-            console.log(error)
-        }).finally(() =>{
-            setLoading(false)
-        })
+        },[productId])
 
     if(loading) {
         return <h2>Cargando...</h2>
