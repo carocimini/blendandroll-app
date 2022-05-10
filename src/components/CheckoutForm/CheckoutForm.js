@@ -10,18 +10,20 @@ const CheckoutForm = () => {
     const {cart, getTotal} = useContext (CartContext)
 
     const [nombre, setNombre] = useState("")
+    const [apellido, setApellido] = useState("")
     const [telefono, setTelefono] = useState("")
     const [email, setEmail] = useState("")
 
     const [loading, setLoading] = useState(false)
 
-    const createOrder = (nombre, telefono, email) => {
+    const createOrder = (nombre, apellido, telefono, email) => {
         setLoading(true)
     
         const objOrder = {
             items: cart,
             buyer:{
                 name: nombre,
+                lastname: apellido,
                 phone: telefono,
                 email: email
             },
@@ -79,6 +81,7 @@ const CheckoutForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(nombre)
+        console.log(apellido)
         console.log(telefono)
         console.log(email)
     }
@@ -94,9 +97,14 @@ const CheckoutForm = () => {
             <Link to={`/cartView/`} className="linkVolverCart" >Volver al Carrito</Link>
             <h1 className="formTitle">Datos del Comprador</h1>
             <form className="formCompra" onSubmit={handleSubmit}>
-                <label className="etiquetasForm" htmlFor="nombre">Nombre Completo:</label>
+                <label className="etiquetasForm" htmlFor="nombre">Nombre:</label>
                 <input id="nombre" name="nombre" type='text'
                     onChange={(e) => setNombre(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                />
+                <label className="etiquetasForm" htmlFor="apellido">Apellido:</label>
+                <input id="apellido" name="apellido" type='text'
+                    onChange={(e) => setApellido(e.target.value)}
                     onKeyDown={handleKeyDown}
                 />
                 <label className="etiquetasForm" htmlFor="telefono">Teléfono:</label>
@@ -109,7 +117,7 @@ const CheckoutForm = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     onKeyDown={handleKeyDown}
                 />
-                <button className="createOrder" type="submit" onClick={() => {createOrder(nombre, telefono, email)}}>Generar Orden de Compra</button>
+                <button className="createOrder" type="submit" onClick={() => {createOrder(nombre, apellido, telefono, email)}}>Generar Orden de Compra</button>
             </form>
         </div>
         
