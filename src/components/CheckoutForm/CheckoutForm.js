@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import './CheckoutForm.css'
 
 const CheckoutForm = () => {
-    const {cart, getTotal} = useContext (CartContext)
+    const {cart, getTotal, clearCart} = useContext (CartContext)
 
     const [nombre, setNombre] = useState("")
     const [apellido, setApellido] = useState("")
@@ -15,6 +15,7 @@ const CheckoutForm = () => {
     const [email, setEmail] = useState("")
 
     const [loading, setLoading] = useState(false)
+    const[orderok, setOrderok] = useState(false)
 
     const createOrder = (nombre, apellido, telefono, email) => {
         setLoading(true)
@@ -61,22 +62,31 @@ const CheckoutForm = () => {
         }).then(({id}) => {
             batch.commit()
             console.log(`El id de la orden es ${id}`)
+            clearCart()
         }).catch( error =>{
             console.log(error)
         }).finally(() =>{
             setLoading(false)
+            setOrderok(true)
         })
+        
+    }
+
+    if(loading) {
+        return <h2>Se esta generando orden...</h2>
+    }
+    if(orderok) {
         return(
             <div>
-                <h2>Se genero la Orden Correctamente</h2>
+                <h1>La orden se genero correctamente</h1>
+                <h2>Gracias por tu compra!!</h2>
                 <Link to='/' className='linkVolver'>Volver a Comprar</Link>
             </div>
-        )
+            )
+            
     }
+   
     
-    if(loading) {
-        return <h2>Se esta generando orden</h2>
-    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
