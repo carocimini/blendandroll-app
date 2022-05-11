@@ -3,7 +3,7 @@
 
 Este proyecto es un ecommerce de una tabaqueria online, presentado como proyecto final del curso de React Js de CODERHOUSE.
 
-![Alt Text](<img src="/blendandroll-app/public/images/Video%20Blenandroll%20App.gif" width="40" height="40" />)
+<img src="/blendandroll-app/public/images/Video-Blenandroll-App.gif" alt="Video Gif de mi App"/>
 
 ## La app incluye las siguientes secciones:
 
